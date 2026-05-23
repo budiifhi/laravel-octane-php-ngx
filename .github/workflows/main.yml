@@ -7,8 +7,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
-    # Tambahkan ini ?
     permissions:
       contents: read
       packages: write
@@ -21,7 +19,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.CR_PAT }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build & Push
         uses: docker/build-push-action@v5
@@ -29,4 +27,4 @@ jobs:
           context: .
           file: ./docker/php-swoole/Dockerfile
           push: true
-          tags: ghcr.io/maroiih252-ship-it/laravel-php-swoole:latest
+          tags: ghcr.io/maroiih252-ship-it/laravel-octane-php-ngx:latest

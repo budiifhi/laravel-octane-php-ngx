@@ -27,4 +27,4 @@ jobs:
           context: .
           file: ./docker/php-swoole/Dockerfile
           push: true
-          tags: ghcr.io/maroiih252-ship-it/laravel-octane-php-ngx:latest
+          tags: ghcr.io/budiifhi/laravel-octane-php-ngx:latest
